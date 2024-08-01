@@ -147,6 +147,26 @@
         "stimuli/Face116_B.png",
   ];
 
+// Preload the pleasant / unpleasant images (for the instructions)
+  var posnegimages = [
+        "us_posneg/instructions/1463.jpg",
+        "us_posneg/instructions/1590.jpg",
+        "us_posneg/instructions/5260.jpg",
+        "us_posneg/instructions/5270.jpg",
+        "us_posneg/instructions/7260.jpg",
+        "us_posneg/instructions/7270.jpg",
+        "us_posneg/instructions/7330.jpg",
+        "us_posneg/instructions/8170.jpg",
+        "us_posneg/instructions/1275.jpg",
+        "us_posneg/instructions/7380.jpg",
+        "us_posneg/instructions/9181.jpg",
+        "us_posneg/instructions/9280.jpg",
+        "us_posneg/instructions/9290.jpg",
+        "us_posneg/instructions/9373.jpg",
+        "us_posneg/instructions/9405.jpg",
+        "us_posneg/instructions/9830.jpg"
+  ];
+
 // Preload all the face without their background color and as a function of their group (for the EC task)
   var group1 = [
   "stimuli_CS/Face19.png", 
@@ -171,7 +191,7 @@
   ];
 
   // preload
-  preloadimages.push(US_pos, US_neg, faces, group1, group2);
+  preloadimages.push(US_pos, US_neg, faces, posnegimages, group1, group2);
 
   // randomize order
   US_pos = _.shuffle(US_pos);
