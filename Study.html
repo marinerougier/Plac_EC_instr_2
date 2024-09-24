@@ -588,7 +588,7 @@ var Instr_EC_3_posYellow_instruction = {
       },
       on_finish: function (data) {
         $('.jspsych-content').css({ "max-width": "90%" });
-        data.task = "controlcond";
+        data.task = "evacond"; //controlcond
         data.CS = jsPsych.timelineVariable('CS', true);
       },
     }]
@@ -1298,7 +1298,6 @@ var reportedPairing_instr = {
         }).csv();
 
       var dataEC = data.filter({ task: 'evacond' }).csv();
-      var dataControl = data.filter({ task: 'controlcond' }).csv();
 
       /* Send data to Firebase */
       database
@@ -1307,15 +1306,10 @@ var reportedPairing_instr = {
         .then(function () {
       database
         .ref("EC_placebo_3/" + jspsych_id + "/")
-        .update({ dataControl })
-        .then(function () {
-      database
-        .ref("EC_placebo_3/" + jspsych_id + "/")
         .update({ dataRC })
         .then(function () {
               console.log("Data sent!");
               $("#jspsych-content").html(debrief);
-         });
         });
       });
     }
